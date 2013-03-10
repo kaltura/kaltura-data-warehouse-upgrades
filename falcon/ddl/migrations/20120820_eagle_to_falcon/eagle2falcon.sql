@@ -264,7 +264,7 @@ CREATE TABLE `dwh_hourly_events_devices_new` (
   `os_id` int(11) NOT NULL DEFAULT '-1',
   `browser_id` int(11) NOT NULL DEFAULT '-1',
   `ui_conf_id` int(11) NOT NULL DEFAULT '-1',
-  `entry_media_type_id` SMALLINT(6) NOT NULL DEFAULT '-1',
+  `entry_id` varchar(20) NOT NULL DEFAULT '-1',
   `sum_time_viewed` decimal(20,3) DEFAULT NULL,
   `count_time_viewed` int(11) DEFAULT NULL,
   `count_plays` int(11) DEFAULT NULL,
@@ -309,7 +309,7 @@ CREATE TABLE `dwh_hourly_events_devices_new` (
   `count_bandwidth_kb` int(11) DEFAULT NULL,
   `total_admins` int(11) DEFAULT NULL,
   `total_media_entries` int(11) DEFAULT NULL,
-  PRIMARY KEY (`partner_id`,`date_id`,`hour_id`,`location_id`,`country_id`,`os_id`,`browser_id`,`ui_conf_id`,`entry_media_type_id`),
+  PRIMARY KEY (`partner_id`,`date_id`,`hour_id`,`location_id`,`country_id`,`os_id`,`browser_id`,`ui_conf_id`,`entry_id`),
   KEY (`date_id`, `hour_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 /*!50100 PARTITION BY RANGE (date_id)
